@@ -1,0 +1,109 @@
+public class App {
+    public static void main(String[] args) throws Exception{
+        calcularMedia(7.5, 8.0, 5.0);
+        mostrarNumeros();
+        DiaDaSemana(1);
+        ePrimo(3);
+        eBissexto(2000)
+    }
+
+
+    public static void calcularMedia(double ap1, double ap2, double ac) {
+        double M = (ap1+ ap2) * 0.4 + ac * 0.2;
+        System.out.println(M);
+
+    }
+
+    public static void mostrarNumeros() {
+        for (int i = 150; i <= 200; i++) {
+            System.out.println(i);
+
+        }
+    }
+
+    public static void DiaDaSemana(int dia) {
+        switch (dia) {
+            case 1:
+                System.out.println("Domingo");
+                break;
+            case 2:
+                System.out.println("Segunda-feira");
+                break;
+            case 3:
+                System.out.println("Terça-feira");
+                break;
+            case 4:
+                System.out.println("Quarta-feira");
+                break;
+            case 5:
+                System.out.println("Quinta-feira");
+                break;
+            case 6:
+                System.out.println("Sexta-feira");
+                break;
+            case 7:
+                System.out.println("Sabado");
+                break;
+            default:
+                System.out.println("Invalido");
+
+        }
+    }
+
+
+        int numero = 29; 
+        if (ePrimo(numero)) {
+            System.out.println(numero + " é um número primo.");
+        } else {
+            System.out.println(numero + " não é um número primo. Divisores:");
+            listarDivisores(numero);
+        }
+    
+
+   
+    public static boolean ePrimo(int num) {
+        if (num <= 1) {
+            return false;
+        }
+        if (num <= 3) {
+            return true;
+        }
+        if (num % 2 == 0 || num % 3 == 0) {
+            return false;
+        }
+        for (int i = 5; i * i <= num; i += 6) {
+            if (num % i == 0 || num % (i + 2) == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    
+    public static void listarDivisores(int num) {
+        for (int i = 2; i <= num / 2; i++) {
+            if (num % i == 0) {
+                System.out.print(i + " ");
+            }
+        }
+    } 
+
+
+
+
+        int ano = 2000; 
+        if (eBissexto(ano)) {
+            System.out.println(ano + " é um ano bissexto.");
+        } else {
+            System.out.println(ano + " não é um ano bissexto.");
+        }
+    
+
+   
+    public static boolean eBissexto(int ano) {
+        if ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0)) {
+            return true;
+        }
+        return false;
+    }
+}
