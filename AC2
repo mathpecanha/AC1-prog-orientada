@@ -1,0 +1,91 @@
+import java.util.Scanner;
+
+public class AC2 {
+
+    public static double somar(double z, double w) {
+        return z + w;
+    }
+
+    public static double subtrair(double z, double w) {
+        return z - w;
+    }
+
+    public static double multiplicar(double z, double w) {
+        return z * w;
+    }
+
+    public static double dividir(double z, double w) {
+            if (w != 0) {
+                return z / w;
+        } else{
+            return 0;
+        }
+    }
+
+    public static void main(String[] args) {
+        while(true){
+            double z, w; 
+            String operacao, opcao;
+            Scanner leitor = new Scanner(System.in);
+            System.out.println("Digite um numero: ");
+            z = leitor.nextInt();
+            System.out.println("Digite um outro numero: ");
+            w = leitor.nextInt();
+            System.out.println("Digite a operação(+,-,*,/)");
+            operacao = leitor.next();
+            leitor.close();
+
+            switch (operacao) {
+                case "+": 
+            System.out.println(somar(z, w));
+
+                    
+                    break;
+                case "*":
+                System.out.println(multiplicar(z, w));
+                    
+                    break;
+                case "-":
+                System.out.println(subtrair(z, w));
+                    
+                    break;
+                case "/":
+                System.out.println(dividir(z, w));
+                    
+                    break;
+            
+                default:
+                    break;
+
+             
+
+            
+                
+             }
+             while(true){
+            System.out.println("Voce quer continuar (c), recomeçar (r), sair (s)"); 
+            opcao = leitor.next();
+            if (opcao.equals("c")) {
+                continue;
+            
+                
+            }
+            else if (opcao.equals("s")){
+                break; 
+
+                
+            }
+            }
+
+
+
+
+
+        
+
+        
+
+
+    }
+    }
+}
