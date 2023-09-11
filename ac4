@@ -1,0 +1,50 @@
+public class Livro {
+    private String titulo;
+    private String autor;
+    private boolean reservado;
+    private boolean emprestado;
+
+    public Livro(String titulo, String autor) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.reservado = false;
+        this.emprestado = false;
+    }
+
+    public void reservar() {
+        if (!reservado && !emprestado) {
+            reservado = true;
+            System.out.println("Livro reservado!");
+        } else {
+            System.out.println("O livro não pode ser reservado.");
+        }
+    }
+
+    public void cancelarReserva() {
+        if (reservado && !emprestado) {
+            reservado = false;
+            System.out.println("Reserva cancelada!");
+        } else {
+            System.out.println("O livro não pode ter a reserva cancelada.");
+        }
+    }
+
+    public void emprestar() {
+        if (reservado && !emprestado) {
+            emprestado = true;
+            reservado = false;
+            System.out.println("Livro emprestado!");
+        } else {
+            System.out.println("O livro não pode ser emprestado.");
+        }
+    }
+
+    public void devolver() {
+        if (emprestado) {
+            emprestado = false;
+            System.out.println("Livro devolvido!");
+        } else {
+            System.out.println("O livro não pode ser devolvido.");
+        }
+    }
+}
